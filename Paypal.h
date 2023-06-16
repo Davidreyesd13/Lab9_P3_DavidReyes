@@ -1,11 +1,15 @@
 #pragma once
 #include <vector>
 #include "UsuarioPaypal.h"
-class Paypal
-{
-	vector<UsuarioPaypal*> base;
+#include <iostream>
+using namespace std;
+class Paypal {
+private:
+    vector<UsuarioPaypal*> usuarios;
+
 public:
-	Paypal();
-	Paypal(vector<UsuarioPaypal*>);
+    vector<UsuarioPaypal*> getUsuarios();
+    void crearCuenta(string nombreUsuario, string numeroIdentidad, string contrasena, double saldoInicial);
+    UsuarioPaypal* iniciarSesion(string nombreUsuario, string contrasena);
 };
 
